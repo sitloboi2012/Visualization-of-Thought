@@ -1,6 +1,8 @@
 # Visualization Of Thought
 
-The implementation of the paper: __"Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models"__
+This is the repository reproduce the code for the paper __"Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models"__
+
+Due to the reason that the __Natural Language Navigation__ section in the paper example was wrong (prompt different and visual differently) so this prompt will based on the image reference in Figure 14 of the paper
 
 ## Setup
 
