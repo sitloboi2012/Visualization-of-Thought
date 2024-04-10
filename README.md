@@ -1,8 +1,9 @@
-# Visualization Of Thought
+# Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models
+![pipeline](vot_banner.png)
 
-This is the repository reproduce the code for the paper __"Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models"__
+This is the repository implements code for the paper [Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models](https://arxiv.org/pdf/2404.03622.pdf) and the model used in the paper are GPT-4-0125-Preview and GPT-4-Vision.
 
-Due to the reason that the __Natural Language Navigation__ section in the paper example was wrong (prompt different and visual differently) so this prompt will based on the image reference in Figure 14 of the paper
+The paper propose a new prompting method which is called Visualization-of-Thought or VoT where LLM could visualize an imaginary visualization in their memory (Mind's Eye or Mental Images) and use that to help them solve problem that required visualize out each of the step in order to keep track and seeing the update of the changes.
 
 ## Setup
 
@@ -20,4 +21,16 @@ pip install -r requirements.txt
 
 ```bash
 TBA
+```
+
+## References
+```bibtex
+@misc{shao2024visual,
+      title={Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models}, 
+      author={Wenshan Wu, Shaoguang Mao, Yadong Zhang, Yan Xia, Li Dong, Lei Cui, Furu Wei},
+      year={2024},
+      eprint={2404.03622},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 ```

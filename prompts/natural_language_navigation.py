@@ -66,7 +66,7 @@ gpt_4_without_viz = client.chat.completions.create(
     ]
 )
 
-print(f"GPT_3.5: {gpt_4_vot.choices[0].message.content}")
+print(f"GPT_4 VoT: {gpt_4_vot.choices[0].message.content}")
 print("-----------------")
 print(f"GPT_4 COT: f{gpt_4_cot.choices[0].message.content}")
 print("-----------------")
