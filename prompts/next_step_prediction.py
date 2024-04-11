@@ -43,7 +43,19 @@ COT_VISION_PAYLOAD = {
             "content": [
                 {
                     "type": "text",
-                    "text": "Now given the image of the map, starting from the Home position, provide the steps to navigate to Office position. Let's think this step by step",
+                    "text": """Now you have all the information on the map.
+                    Starting from the Home position, to navigate to the Office location, you made the follow move:
+                    1. Move down to the end of the continuous road.
+                    2. Move right one step
+                    
+                    What's the direction of next movement?
+                    A. Up
+                    B. Left
+                    C. Down
+                    D. Right
+                    
+                    Let's think this step by step.
+                    """,
                 },
                 {
                     "type": "image_url",
@@ -83,8 +95,17 @@ VOT_NONVISION_PAYLOAD = {
                 {
                     "type": "text",
                     "text": """Now you have all the information on the map.
-                    You start at the position where the H which is the Home is located.
-                    Provide the steps to navigate to the O which is the Office position. Please visualize the state after each reasoning step.""",
+                    Starting from the Home position, to navigate to the Office location, you made the follow move:
+                    1. Move down to the end of the continuous road.
+                    2. Move right one step
+                    
+                    What's the direction of next movement?
+                    A. Up
+                    B. Left
+                    C. Down
+                    D. Right
+                    
+                    Please visualize the state after each reasoning step.""",
                 },
             ],
         },
@@ -120,8 +141,17 @@ COT_NONVISION_PAYLOAD = {
                 {
                     "type": "text",
                     "text": """Now you have all the information on the map.
-                    You start at the position where the H which is the Home is located.
-                    Provide the steps to navigate to the O which is the Office position. Let's think this step by step.""",
+                    Starting from the Home position, to navigate to the Office location, you made the follow move:
+                    1. Move down to the end of the continuous road.
+                    2. Move right one step
+                    
+                    What's the direction of next movement?
+                    A. Up
+                    B. Left
+                    C. Down
+                    D. Right
+                    
+                    Let's think this step by step.""",
                 },
             ],
         },
@@ -157,13 +187,23 @@ NOVIZ_COT_NONVISION_PAYLOAD = {
                 {
                     "type": "text",
                     "text": """Now you have all the information on the map.
-                    You start at the position where the H which is the Home is located.
-                    Provide the steps to navigate to the O which is the Office position. : Don't use visualization. Let's think step by step""",
+                    Starting from the Home position, to navigate to the Office location, you made the follow move:
+                    1. Move down to the end of the continuous road.
+                    2. Move right one step
+                    
+                    What's the direction of next movement?
+                    A. Up
+                    B. Left
+                    C. Down
+                    D. Right
+                    
+                    Don't use visualization. Let's think step by step""",
                 },
             ],
         },
     ],
 }
 
-response = requests.post("https://api.openai.com/v1/chat/completions", headers=HEADERS, json=VOT_NONVISION_PAYLOAD)
+
+response = requests.post("https://api.openai.com/v1/chat/completions", headers=HEADERS, json=NOVIZ_COT_NONVISION_PAYLOAD)
 print(response.json()["choices"][0]["message"]["content"])

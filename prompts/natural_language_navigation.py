@@ -2,7 +2,7 @@ from openai import OpenAI
 
 client = OpenAI()
 
-gpt_4_vot = client.chat.completions.create(
+VOT_PROMPT = client.chat.completions.create(
     model = "gpt-4-turbo",
     messages = [
         {"role": "system", "content": """
@@ -24,7 +24,7 @@ gpt_4_vot = client.chat.completions.create(
     ]
 )
 
-gpt_4_cot = client.chat.completions.create(
+COT_PROMPT = client.chat.completions.create(
     model = "gpt-4-0125-preview",
     messages = [
         {"role": "system", "content": """
@@ -45,7 +45,7 @@ gpt_4_cot = client.chat.completions.create(
     ]
 )
 
-gpt_4_without_viz = client.chat.completions.create(
+NOVIZ_COT = client.chat.completions.create(
     model = "gpt-4-0125-preview",
     messages = [
         {"role": "system", "content": """
@@ -66,8 +66,9 @@ gpt_4_without_viz = client.chat.completions.create(
     ]
 )
 
-print(f"GPT_4 VoT: {gpt_4_vot.choices[0].message.content}")
+print("NATURAL LANGUAGE NAVIGATION TASK COMPARISON")
+print(f"GPT 4 VISUALIZATION-OF-THOUGHT: {VOT_PROMPT.choices[0].message.content}")
 print("-----------------")
-print(f"GPT_4 COT: f{gpt_4_cot.choices[0].message.content}")
+print(f"GPT 4 CHAIN-OF-THOUGHT: f{COT_PROMPT.choices[0].message.content}")
 print("-----------------")
-print(f"GPT_4 COT no Viz: {gpt_4_without_viz.choices[0].message.content}")
+print(f"GPT 4 CHAIN OF THOUGH with no Visualization: {NOVIZ_COT.choices[0].message.content}")
