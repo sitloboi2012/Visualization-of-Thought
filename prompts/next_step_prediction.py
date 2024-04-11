@@ -1,7 +1,7 @@
 import base64
 import requests
 
-OPENAI_API_KEY = "sk-123"
+OPENAI_API_KEY = ""
 HEADERS = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {OPENAI_API_KEY}",
